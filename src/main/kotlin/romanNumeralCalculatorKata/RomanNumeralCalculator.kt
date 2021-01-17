@@ -5,11 +5,13 @@ package romanNumeralCalculatorKata
 
 class RomanNumeralCalculator {
 
+    private val toRoman = mapOf(
+        "IIIII" to "V",
+        "VV" to "X"
+    )
+
     fun add(romanNumeralOne: String, romanNumeralTwo: String): String {
         val total = "$romanNumeralOne$romanNumeralTwo"
-
-        if(total == "IIIII") return "V"
-        if(total == "VV") return "X"
-        return total
+        return toRoman[total] ?: total
     }
 }
